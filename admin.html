@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Vehicle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">LE-EASE</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="vehicles.html">Vehicles</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="admin.html" class="active">Add Vehicle</a>
+  </nav>
+  <div class="auth"></div>
+</header>
+
+<section class="section">
+  <h2>Add New Vehicle</h2>
+
+  <!-- VEHICLE ADDITION FORM -->
+  <form id="add-vehicle-form" class="booking-form">
+    <input type="text" id="v-name" placeholder="Vehicle Name">
+    
+    <!-- VEHICLE TYPE -->
+    <select id="v-type">
+      <option value="bike">Bike</option>
+      <option value="car">Car</option>
+    </select>
+    <!-- FUEL TYPE -->
+    <select id="v-fuel">
+      <option value="petrol">Petrol</option>
+      <option value="electric">Electric</option>
+      <option value="hybrid">Hybrid</option>
+    </select>
+    <!-- STORE DETAILS -->
+    <input type="number" id="v-price" placeholder="Price per day">
+    <input type="number" id="v-seats" placeholder="Seats">
+    <input type="text" id="v-badge" placeholder="Badge (e.g. Luxury)">
+    <input type="text" id="v-image" placeholder="Image URL">
+    <input type="text" id="v-desc" placeholder="Description">
+
+    <button type="submit" class="btn primary full">Add Vehicle</button>
+  </form>
+
+  <h3 style="margin-top:20px;">Preview</h3>
+  <div id="vehicle-preview"></div>
+
+  <h3 style="margin-top:20px;">Custom Vehicles</h3>
+  <div id="custom-vehicles-list"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>LE-EASE</div>
+  <div>© 2026 LE-EASE. All Rights Reserved.</div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  renderAuthBars();
+</script>
+</body>
+</html>
