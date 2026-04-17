@@ -1,3 +1,5 @@
+/* CSS for LE-EASE website */
+/* rem = root em = 16px*/
 :root {
   --primary: #0d9488;
   --primary-dark: #0b7b71;
@@ -54,7 +56,7 @@ img {
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn.primary {
@@ -85,14 +87,14 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
+  display: flex; /*horizontally align items*/
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 2rem;
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 2px solid rgba(226, 232, 240, 0.8);
 }
 
 .logo {
@@ -104,18 +106,20 @@ img {
 nav {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Controls whether items wrap onto new lines if they overflow the container. */
 }
 
+/* hanges attributes for all things inside the 'a' tag under nav*/ 
 nav a {
   color: var(--muted);
   font-weight: 700;
-  padding: 0.35rem 0.2rem;
+  padding: 0.35rem 0.2rem; /*padding is the space inside the element, between the content and the border. The first value (0.35rem) applies to the top and bottom, while the second value (0.2rem) applies to the left and right.*/
 }
 
+/* Active page keep the color and balnce while hovering change color*/
 nav a.active,
 nav a:hover {
-  color: var(--primary);
+  color: var(--primary); 
 }
 
 .auth {
@@ -228,14 +232,14 @@ nav a:hover {
 
 .split {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1rem;
-  align-items: stretch;
+  grid-template-columns: 1.1fr 0.9fr; /*1.1fr means 1.1 times the size of the second column, and 0.9fr means 0.9 times the size of the first column. This creates a layout where the first column is slightly larger than the second column, with a total of 2fr (1.1fr + 0.9fr) to distribute the available space.*/
+  gap: 1rem; /*space between grid items*/
+  align-items: stretch; /*to make both columns the same height, regardless of their content. This ensures a balanced and visually appealing layout, especially when the content in each column varies in length or size.*/
 }
 
 .text p {
   color: var(--muted);
-  max-width: 60ch;
+  max-width: 60ch; /*ch unit is based on the width of the "0" character in the current font. Setting a max-width in ch units helps ensure that lines of text don't become too long, which can improve readability. In this case, max-width: 60ch means that the text will wrap to a new line after approximately 60 characters, creating a more comfortable reading experience.*/
 }
 
 .stats {
@@ -250,12 +254,12 @@ nav a:hover {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1rem 1.2rem;
-  min-width: 150px;
+  min-width: 150px; /*to ensure that each stat box has a minimum width, which helps maintain a consistent and visually appealing layout, especially when the content inside the boxes varies in length. This prevents the boxes from becoming too narrow and ensures that the information is displayed clearly.*/
   box-shadow: var(--shadow);
 }
 
 .stats strong {
-  display: block;
+  display: block; /*makes the strong element a block-level element, which allows it to take up the full width of its container and stack vertically with other elements. This is useful for styling purposes, as it allows you to control the layout and spacing of the content more effectively.*/
   font-size: 1.7rem;
   color: var(--primary);
 }
@@ -290,7 +294,7 @@ nav a:hover {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /*to create space between the two sections of the footer, pushing them to opposite ends of the container. This helps create a balanced and visually appealing layout, especially when the content in each section varies in length or size.*/
   gap: 1rem;
   padding: 1.1rem 2rem;
   background: #eaeef4;
@@ -298,7 +302,7 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-.footer .links {
+.footer .links { /*to style the links section of the footer, which contains navigation links or other important information. By using display: flex, you can create a horizontal layout for the links, and gap: 1rem adds spacing between each link to improve readability and visual appeal. Additionally, flex-wrap: wrap allows the links to wrap onto multiple lines if there are too many to fit in a single line, ensuring that the footer remains organized and visually balanced even on smaller screens or when there are many links.*/
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -306,12 +310,12 @@ nav a:hover {
 
 .page-header {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem 1rem;
+  margin: 0 auto; /*to center the page header horizontally within its container. By setting the left and right margins to auto, the browser will automatically calculate and distribute the available space on either side of the header, effectively centering it on the page. This is a common technique used in web design to create a visually balanced layout, especially when the content within the header has a fixed width or max-width.*/
+  padding: 3rem 2rem 1rem; /*first value (3rem) applies to the top padding, the second value (2rem) applies to the left and right padding, and the third value (1rem) applies to the bottom padding. This creates a visually appealing spacing around the page header, with more space at the top to separate it from the content above, and balanced padding on the sides and bottom to ensure that the header stands out and is easy to read.*/
 }
 
 .tag {
-  display: inline-flex;
+  display: inline-flex; /*to create a horizontal layout for the tag, allowing the text and any potential icons or elements within the tag to be aligned in a row. This is useful for styling purposes, as it allows you to control the layout and spacing of the content within the tag more effectively.*/
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   font-weight: 900;
@@ -320,22 +324,22 @@ nav a:hover {
 }
 
 .page-header h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4vw, 3.2rem); /*clamp() is a CSS function that allows you to set a responsive font size that adjusts based on the viewport width. In this case, the font size will be at least 2rem, will scale up to 3.2rem as the viewport width increases, and will be 4vw (4% of the viewport width) in between those two values. This creates a flexible and visually appealing heading that adapts to different screen sizes while maintaining readability and design consistency.*/
   margin-top: 0.4rem;
 }
 
 .filters {
   max-width: 1200px;
-  margin: 1rem auto 0;
+  margin: 1rem auto 0;/*to center the filters section horizontally within its container. By setting the left and right margins to auto, the browser will automatically calculate and distribute the available space on either side of the filters, effectively centering it on the page. This is a common technique used in web design to create a visually balanced layout, especially when the content within the filters has a fixed width or max-width.*/
   padding: 1rem;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 24px;
   box-shadow: var(--shadow);
-  display: grid;
+  display: grid; /*turn it into a grid container, allowing you to define rows and columns for the child elements (filters) and control their layout more effectively. This is useful for creating a structured and visually appealing arrangement of the filters, especially when you have multiple filters that need to be organized in a specific way.*/
   grid-template-columns: 2fr 1fr 1fr auto;
   gap: 1rem;
-  align-items: end;
+  align-items: end; /*to align the child elements (filters) to the bottom of their respective grid cells. This is particularly useful when you have filters of varying heights, as it creates a visually balanced layout by ensuring that the bottom edges of the filters are aligned, even if their top edges are not. This can enhance the overall aesthetics and readability of the filters section, especially when it contains form elements like input fields and buttons that may have different heights.*/
 }
 
 .filter label {
@@ -356,7 +360,7 @@ nav a:hover {
   border-radius: 14px;
   border: 1px solid var(--border);
   background: #f8fafc;
-  outline: none;
+  outline: none; /*to remove the default focus outline that browsers apply to input fields when they are focused. This is often done to allow for custom styling of the focus state, such as changing the border color or adding a box shadow, without the interference of the default outline. However, it's important to ensure that you provide an alternative visual indication of focus for accessibility purposes, such as changing the border color or adding a box shadow, so that users can easily identify which input field is currently active.*/
 }
 
 .filter input:focus,
@@ -372,7 +376,7 @@ nav a:hover {
   margin: 1.4rem auto 0;
   padding: 0 2rem 3rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /*to create a grid layout with three columns of equal width. The repeat(3, minmax(0, 1fr)) function generates three columns, where each column has a minimum width of 0 and a maximum width of 1fr (one fraction of the available space). This allows the columns to expand and fill the available space in the container while maintaining equal widths, creating a visually balanced and responsive layout for displaying multiple vehicles or items in a grid format.*/
   gap: 1rem;
 }
 
@@ -380,15 +384,15 @@ nav a:hover {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 24px;
-  overflow: hidden;
+  overflow: hidden; /*to ensure that any content that exceeds the boundaries of the vehicle card is hidden from view. This is particularly useful for maintaining a clean and visually appealing design, especially when the card contains images or other elements that may have varying sizes. By setting overflow: hidden, you can prevent any content from spilling out of the card and disrupting the layout, while also allowing for creative use of images and other media within the card without worrying about layout issues caused by oversized content.*/
   box-shadow: var(--shadow);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /*to stack the child elements of the vehicle card vertically, allowing you to control the layout and spacing of the content within the card more effectively. This is useful for creating a structured and visually appealing arrangement of the vehicle information, such as the image, title, price, and other details, in a way that is easy to read and navigate for users browsing through the available vehicles.*/
 }
 
 .vehicle-media {
-  position: relative;
-  height: 220px;
+  position: relative; /*to allow for absolute positioning of child elements, such as badges or overlays, within the vehicle media section. This is useful for creating visually appealing designs, such as placing a badge in the top-left corner of the vehicle image to indicate a special offer or status, without affecting the layout of the other content within the vehicle card. By setting position: relative on the vehicle media container, you can use position: absolute on child elements to position them precisely within the media area, enhancing the overall aesthetics and functionality of the vehicle card.*/
+  height: 220px; 
   overflow: hidden;
 }
 
@@ -396,7 +400,7 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease; /*to create a smooth zoom-in effect on the vehicle image when the user hovers over the vehicle card. The transition property specifies that the transform property should be animated over a duration of 0.4 seconds with an easing function of ease, which creates a gradual acceleration and deceleration effect for the animation. This enhances the user experience by providing visual feedback and making the interface more interactive and engaging when users explore the available vehicles.*/
 }
 
 .vehicle-card:hover .vehicle-media img {
@@ -404,7 +408,7 @@ nav a:hover {
 }
 
 .badge {
-  position: absolute;
+  position: absolute; /*to allow for precise positioning of the badge element within the vehicle media section. This is useful for creating visually appealing designs, such as placing a badge in the top-left corner of the vehicle image to indicate a special offer or status, without affecting the layout of the other content within the vehicle card. By setting position: absolute on the badge, you can position it precisely within the media area, enhancing the overall aesthetics and functionality of the vehicle card.*/
   top: 1rem;
   left: 1rem;
   background: rgba(13, 148, 136, 0.95);
@@ -429,7 +433,7 @@ nav a:hover {
 .price {
   font-weight: 900;
   color: var(--primary);
-  white-space: nowrap;
+  white-space: nowrap; /*to prevent the price from breaking into multiple lines, ensuring that it remains on a single line for better readability and visual appeal. This is particularly useful for displaying prices in a clear and concise manner, especially when the price includes currency symbols or additional information that should be kept together without wrapping.*/
 }
 
 .price small {
@@ -553,7 +557,7 @@ nav a:hover {
 
 .admin-grid {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; /*to center the admin grid horizontally within its container. By setting the left and right margins to auto, the browser will automatically calculate and distribute the available space on either side of the admin grid, effectively centering it on the page. This is a common technique used in web design to create a visually balanced layout, especially when the content within the admin grid has a fixed width or max-width.*/
   padding: 0 2rem 1rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -584,11 +588,11 @@ nav a:hover {
 }
 
 .modal.hidden {
-  display: none !important;
+  display: none !important; /*to ensure that the modal is completely hidden and does not take up any space in the layout when it is not visible. This is particularly important for modals, as they are typically designed to overlay other content and should not interfere with the layout or functionality of the underlying page when they are hidden. By using display: none !important, you can override any other styles that may be applied to the modal and ensure that it is fully hidden from view and does not affect the user experience when it is not active.*/
 }
 
 .modal-content {
-  width: min(92vw, 440px);
+  width: min(92vw, 440px); /*vw-based on the viewport width. Setting a width in vw units allows the modal to be responsive and adapt to different screen sizes. In this case, width: min(92vw, 440px) means that the modal will take up 92% of the viewport width, but will not exceed a maximum width of 440px. This ensures that the modal remains visually appealing and functional on both small and large screens, providing an optimal user experience across various devices.*/
   background: var(--card);
   border-radius: 28px;
   border: 1px solid var(--border);
