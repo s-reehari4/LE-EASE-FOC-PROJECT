@@ -29,7 +29,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none; /*to remove the default underline from links, allowing you to style them in a way that fits the overall design of your website. By setting text-decoration: none, you can create a cleaner and more modern look for your links, while still maintaining their functionality. This is particularly useful when you want to use custom styles for your links, such as different colors, hover effects, or other visual enhancements, without being constrained by the default browser styles for links.*/
 }
 
 img {
